@@ -1,7 +1,7 @@
 "use server"
 
 import { prisma } from "@/src/lib/prisma"
-
+export const dynamic = 'force-dynamic' //to refresh all cache
 export async function GET() {
     const orders = await prisma.order.findMany({
         take:5,
