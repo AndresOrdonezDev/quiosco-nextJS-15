@@ -19,7 +19,7 @@ async function searchProduct(searchTerm: string) {
     return products
 }
 
-export default async function SearchPage({ searchParams }: { searchParams: { search: string } }) {
+export default async function SearchPage({ searchParams }: { searchParams: Promise<{ search: string }> }) {
     const { search } = await searchParams
     const products = await searchProduct(search)
     return (

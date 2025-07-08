@@ -36,7 +36,7 @@ function validatePageNumber(pageParam: string): number {
   return (pageNumber >= 1) ? pageNumber : -1;
 }
 
-export default async function ProductsPage({ searchParams }: { searchParams: { page: string } }) {
+export default async function ProductsPage({ searchParams }: { searchParams: Promise<{ page: string }> }) {
   const { page } = await searchParams
   
   // Validar el número de página de forma más robusta

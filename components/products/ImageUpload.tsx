@@ -17,7 +17,7 @@ export default function ImageUpload({image}:{image: string | undefined}) {
             onSuccess={(result, { widget }) => {
                 if (result.event === 'success') {
                     widget.close()
-                    //@ts-ignore
+                    //@ts-expect-error: Cloudinary widget types are not available in the current version
                     setImageUrl(result.info?.secure_url)
                 }
 
